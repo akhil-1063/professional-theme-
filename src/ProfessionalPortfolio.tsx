@@ -700,7 +700,7 @@ export default function ProfessionalPortfolio() {
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {projects.filter(p => p.id === "sfx-hostels" || p.id === "eventra" || p.id === "liftlog").map((project, idx) => (
+            {projects.filter(p => p.id === "sfx-hostels" || p.id === "eventra" || p.id === "dual-theme-portfolio" || p.id === "liftlog").map((project, idx) => (
               <motion.article 
                 key={project.id}
                 initial={{ opacity: 0, y: 40 }}
@@ -736,9 +736,11 @@ export default function ProfessionalPortfolio() {
                             className="flex items-center gap-1 text-xs font-bold hover:opacity-85 transition-opacity"
                             style={{ color: "var(--leaf)" }}
                           >
-                            Frontend Code &rarr;
+                            {project.githubBackendUrl && project.githubBackendUrl !== (project.githubFrontendUrl || project.githubUrl) 
+                              ? "Frontend Code \u2192" 
+                              : "Code \u2192"}
                           </a>
-                          {project.githubBackendUrl && (
+                          {project.githubBackendUrl && project.githubBackendUrl !== (project.githubFrontendUrl || project.githubUrl) && (
                             <a 
                               href={project.githubBackendUrl} 
                               target="_blank" 
