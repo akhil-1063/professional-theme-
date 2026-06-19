@@ -121,7 +121,7 @@ export const projects: Project[] = [
     category: "Personal Portfolio",
     summary: "Interactive desktop-style portfolio featuring dual themed modes: macOS canvas and retro Windows 95 pixel art.",
     description: "Built a personal portfolio designed as an interactive desktop environment with two themed modes: a glassmorphic macOS canvas and a retro Windows 95 pixel art layout. Features draggable windows managed by a global React context, custom bottom dock/taskbar, a gooey cursor reveal mask, and server-side Spotify API integration for real-time track display.",
-    techStack: ["Next.js", "React", "Node.js", "Spotify Web API", "Tailwind CSS v4", "Framer Motion", "GSAP", "Three.js", "TypeScript"],
+    techStack: ["Next.js", "React", "Node.js", "Spotify Web API", "Tailwind CSS v4", "Framer Motion", "GSAP", "Three.js", "TypeScript","Mongo DB"],
     githubUrl: "https://github.com/akhil-1063/portfolio",
     liveUrl: "https://akillllll.vercel.app/",
     image: "/assets/projects.png",
