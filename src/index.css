@@ -11,3 +11,8 @@ html, body {
   background-color: #070a07;
   color: #f2f3f2;
 }
+
+html.professional-view-active,
+body.professional-view-active {
+  height: auto;
+}
