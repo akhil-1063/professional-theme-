@@ -15,7 +15,9 @@ import {
   Sun, 
   Moon, 
   Eye,
-  Download
+  Download,
+  Menu,
+  X
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./icons/SocialIcons";
 import { trackEvent } from "./lib/analytics";
@@ -52,6 +54,7 @@ export default function ProfessionalPortfolio() {
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [mobileError, setMobileError] = useState<string | null>(null);
   const [isPdfOpen, setIsPdfOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     // Add professional-mode class to body and html to handle styles and scrolling
@@ -528,9 +531,11 @@ export default function ProfessionalPortfolio() {
 
         /* Glassmorphic Header (Stuck at Top) */
         .site-header {
-          position: sticky;
+          position: fixed;
           top: 0;
-          z-index: 40;
+          left: 0;
+          right: 0;
+          z-index: 50;
           width: 100%;
           background: rgba(255, 255, 255, 0.75);
           backdrop-filter: blur(20px) saturate(145%);
@@ -562,7 +567,7 @@ export default function ProfessionalPortfolio() {
             <a href="#contact">Contact</a>
           </nav>
 
-          <div className="flex items-center gap-4 select-none">
+          <div className="flex items-center gap-2 md:gap-4 select-none">
             {/* Theme Toggle */}
             <button 
               onClick={toggleTheme}
@@ -572,11 +577,86 @@ export default function ProfessionalPortfolio() {
             >
               {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
+
+            {/* Mobile Menu Toggle */}
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-xl transition-all md:hidden"
+              style={{ background: "var(--soft)", color: "var(--leaf)" }}
+              aria-label="Toggle Mobile Menu"
+            >
+              {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile Navigation Dropdown */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className="md:hidden overflow-hidden border-t"
+              style={{ borderColor: "var(--line)", background: "var(--main-bg)" }}
+            >
+              <nav className="flex flex-col px-6 py-4 gap-3 select-none">
+                <a 
+                  href="#about" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-sm font-semibold py-1.5 hover:text-[var(--leaf)] transition-colors"
+                  style={{ color: "var(--muted)" }}
+                >
+                  About
+                </a>
+                <a 
+                  href="#work" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-sm font-semibold py-1.5 hover:text-[var(--leaf)] transition-colors"
+                  style={{ color: "var(--muted)" }}
+                >
+                  Work
+                </a>
+                <a 
+                  href="#stack" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-sm font-semibold py-1.5 hover:text-[var(--leaf)] transition-colors"
+                  style={{ color: "var(--muted)" }}
+                >
+                  Stack
+                </a>
+                <a 
+                  href="#experience" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-sm font-semibold py-1.5 hover:text-[var(--leaf)] transition-colors"
+                  style={{ color: "var(--muted)" }}
+                >
+                  Experience
+                </a>
+                <a 
+                  href="#certifications" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-sm font-semibold py-1.5 hover:text-[var(--leaf)] transition-colors"
+                  style={{ color: "var(--muted)" }}
+                >
+                  Certifications
+                </a>
+                <a 
+                  href="#contact" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-sm font-semibold py-1.5 hover:text-[var(--leaf)] transition-colors"
+                  style={{ color: "var(--muted)" }}
+                >
+                  Contact
+                </a>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 py-12 flex flex-col gap-20">
+      <main className="max-w-6xl mx-auto px-6 pt-28 pb-12 flex flex-col gap-20">
         
         {/* Section: Hero / About Me */}
         <section id="about" className="scroll-mt-24 pt-4 pb-8 flex flex-col lg:flex-row gap-12 items-center justify-between">
@@ -700,7 +780,7 @@ export default function ProfessionalPortfolio() {
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {projects.filter(p => p.id === "sfx-hostels" || p.id === "eventra" || p.id === "dual-theme-portfolio" || p.id === "liftlog").map((project, idx) => (
+            {projects.filter(p => p.id === "sfx-hostels" || p.id === "eventra" || p.id === "doha-wellness" || p.id === "dual-theme-portfolio" || p.id === "liftlog").map((project, idx) => (
               <motion.article 
                 key={project.id}
                 initial={{ opacity: 0, y: 40 }}
