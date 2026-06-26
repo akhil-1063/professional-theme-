@@ -560,9 +560,9 @@ export default function ProfessionalPortfolio() {
           
           <nav className="desktop-nav hidden md:flex select-none">
             <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#stack">Stack</a>
-            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
             <a href="#certifications">Certifications</a>
             <a href="#contact">Contact</a>
           </nav>
@@ -611,28 +611,28 @@ export default function ProfessionalPortfolio() {
                   About
                 </a>
                 <a 
-                  href="#work" 
+                  href="#projects" 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-sm font-semibold py-1.5 hover:text-[var(--leaf)] transition-colors"
                   style={{ color: "var(--muted)" }}
                 >
-                  Work
+                  Projects
                 </a>
                 <a 
-                  href="#stack" 
+                  href="#skills" 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-sm font-semibold py-1.5 hover:text-[var(--leaf)] transition-colors"
                   style={{ color: "var(--muted)" }}
                 >
-                  Stack
+                  Skills
                 </a>
                 <a 
-                  href="#experience" 
+                  href="#education" 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-sm font-semibold py-1.5 hover:text-[var(--leaf)] transition-colors"
                   style={{ color: "var(--muted)" }}
                 >
-                  Experience
+                  Education
                 </a>
                 <a 
                   href="#certifications" 
@@ -773,9 +773,9 @@ export default function ProfessionalPortfolio() {
         </motion.section>
 
         {/* Section: Projects (Work with Staggered Scroll-up) */}
-        <section id="work" className="portfolio-section scroll-mt-24">
+        <section id="projects" className="portfolio-section scroll-mt-24">
           <motion.div {...scrollSlideLeft} className="section-heading mb-8">
-            <p className="section-kicker">Work</p>
+            <p className="section-kicker">Projects</p>
             <h2>Projects shipped</h2>
           </motion.div>
           
@@ -855,12 +855,12 @@ export default function ProfessionalPortfolio() {
         {/* Section: Skills (Stack - Scroll Staggered Slide Left) */}
         <motion.section 
           {...scrollSlideLeft}
-          id="stack" 
+          id="skills" 
           className="stack-section scroll-mt-24 rounded-2xl"
         >
           <div className="stack-section-content flex flex-col gap-8">
             <div className="section-heading">
-              <p className="section-kicker">Stack</p>
+              <p className="section-kicker">Skills</p>
               <h2>Tools I reach for</h2>
             </div>
             
@@ -930,16 +930,16 @@ export default function ProfessionalPortfolio() {
           </div>
         </motion.section>
 
-        {/* Section: Experience & Resume (Flight Log - Scroll slide in left) */}
-        <section id="experience" className="portfolio-section scroll-mt-24 timeline">
+        {/* Section: Education & Resume (Academic History - Scroll slide in left) */}
+        <section id="education" className="portfolio-section scroll-mt-24 timeline">
           <motion.div 
             {...scrollSlideLeft}
             className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b pb-6" 
             style={{ borderColor: "var(--line)" }}
           >
             <div className="section-heading mb-0">
-              <p className="section-kicker">Education and Experience</p>
-              <h2>Flight log, grounded edition</h2>
+              <p className="section-kicker">Education</p>
+              <h2>Education</h2>
             </div>
             
             {/* Tactile button links for resume view/download */}

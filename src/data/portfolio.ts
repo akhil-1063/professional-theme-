@@ -119,13 +119,13 @@ export const projects: Project[] = [
     id: "doha-wellness",
     title: "Doha Wellness",
     category: "Full Stack App",
-    summary: "A comprehensive service listing platform connecting users with local wellness and healthcare service providers.",
-    description: "Developed Doha Wellness, a full-stack service listing platform allowing users to search, filter, and browse wellness and healthcare services. Designed a responsive frontend landing page, service listing grids, search input by service name, and filtering by category and location. Built a robust Node.js and Express.js backend with RESTful APIs supporting CRUD operations for service providers, backed by MongoDB for scalable data storage.",
-    techStack: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    summary: "A comprehensive full-stack wellness portal featuring role-based secure booking, patient dashboard, and service provider management.",
+    description: "Developed Doha Wellness, a full-stack wellness and booking marketplace. Rebuilt the application into a unified full-stack Next.js project featuring NextAuth.js (Google OAuth & Credentials) for secure authentication, Resend API for automated confirmation emails, and real-time booking scheduling. Designed an interactive frontend with dynamic search/filter category pills connected to a robust Next.js App Router API and scalable MongoDB Atlas/Mongoose data models.",
+    techStack: ["Next.js", "React", "MongoDB", "Mongoose", "NextAuth.js", "Resend API", "Tailwind CSS v4"],
     githubUrl: "https://github.com/akhil-1063/service-Listing-Platform-",
     githubFrontendUrl: "https://github.com/akhil-1063/service-Listing-Platform-/tree/main/client",
     githubBackendUrl: "https://github.com/akhil-1063/service-Listing-Platform-/tree/main/server",
-    liveUrl: "https://service-listing-platform.vercel.app/",
+    liveUrl: "https://service-listing-platform-1.onrender.com/",
     image: "/assets/projects.png",
   },
   {
@@ -217,17 +217,6 @@ export const experienceData: ExperienceItem[] = [
     details: [
       "Built a strong foundation in programming, data structures, and software engineering.",
       "Completed projects in web development, database systems, and algorithm design.",
-    ],
-  },
-  {
-    id: "freelance",
-    role: "Freelance Full Stack  Developer",
-    companyOrInstitution: "Self-Employed",
-    period: " April 2026 - Present",
-    details: [
-      "Built responsive and production ready  web applications and  interactive portfolio sites .",
-      "Delivered features using React, Node.js, Express, and MongoDB with Git-based workflows.",
-      "Focused on maintainable code, performance, and cross-device user experience.",
     ],
   },
 ];
