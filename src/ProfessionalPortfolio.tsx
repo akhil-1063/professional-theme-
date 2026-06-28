@@ -780,7 +780,7 @@ export default function ProfessionalPortfolio() {
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {projects.filter(p => p.id === "sfx-hostels" || p.id === "eventra" || p.id === "doha-wellness" || p.id === "dual-theme-portfolio" || p.id === "liftlog").map((project, idx) => (
+            {projects.filter(p => p.id === "sfx-hostels" || p.id === "eventra" || p.id === "doha-wellness" || p.id === "liftlog").map((project, idx) => (
               <motion.article 
                 key={project.id}
                 initial={{ opacity: 0, y: 40 }}
